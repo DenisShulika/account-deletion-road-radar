@@ -23,3 +23,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const toggle = document.querySelector(".theme-toggle");
     if (toggle) toggle.textContent = theme === "dark" ? "🌞" : "🌙";
   }
+  
+  function setLanguage(lang) {
+    const elements = document.querySelectorAll(`[data-${lang}]`);
+    elements.forEach(element => {
+      const translation = element.getAttribute(`data-${lang}`);
+      if (translation) {
+        element.innerHTML = translation;
+      }
+    });
+  }
